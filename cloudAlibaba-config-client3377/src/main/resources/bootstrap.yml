@@ -1,0 +1,22 @@
+#bootstrap用于全局配置,配置中心的配置一般放在这里
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册中心地址
+      config:
+        server-addr: localhost:8848 #配置中心地址
+        file-extension: yaml #指定yaml格式的配置
+        #group: DEV_GROUP   #表示要读取的组  不写group默认读取的是DEFAULT_GROUP组的配置文件
+        namespace: 83e9cb5a-16db-4332-b53e-3da421c819e9     #与nacos的命名空间id对应  经测试若id写成001会报错自动生成的id不会
+
+
+
+#   ${spring.application.name}-${spring.profiles.active}.${file-extension}
+
+#   nacos-config-client-dev.yaml

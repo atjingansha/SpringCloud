@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: nacos-payment-provider
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.100:1111  #此处找的是liunx上的nginx端口然后由nginx分配nacos集群服务器
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
